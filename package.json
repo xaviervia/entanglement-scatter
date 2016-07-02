@@ -1,0 +1,26 @@
+{
+  "name": "entanglement-scatter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sagui build",
+    "develop": "sagui develop --port 3000",
+    "dist": "NODE_ENV=production sagui build --optimize",
+    "start": "npm run develop",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:coverage": "npm run test:unit -- --coverage",
+    "test:lint": "sagui lint",
+    "test:unit": "NODE_ENV=test sagui test",
+    "test:unit:watch": "npm run test:unit -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "redux": "^3.5.2",
+    "redux-haiku": "^0.1.4",
+    "sagui": "^6.1.0",
+    "serviceworker-loader": "^0.1.0"
+  }
+}
