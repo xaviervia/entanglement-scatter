@@ -18,6 +18,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-entanglement": "^0.3.3",
     "redux": "^3.5.2",
     "redux-haiku": "^0.1.4",
     "sagui": "^6.1.0",

@@ -2,19 +2,13 @@
 import { createStore } from 'redux'
 import reducer, { initialState } from './reducer'
 import loggerSubscriber from './subscribers/logger'
+import { addMessage } from './actions'
 
-const store = createStore(
-  reducer,
-  initialState
-)
+const store = createStore(reducer, initialState)
 
 loggerSubscriber(store)
 
-self.addEventListener('message', (message) => {
-  store.dispatch({
-    type: 'ADD_MESSAGE',
-    payload: {
-      value: message
-    }
-  })
-})
+self.addEventListener(
+  'message',
+  (message) => store.dispatch(addMessage(message))
+)

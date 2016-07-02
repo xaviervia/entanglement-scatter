@@ -1,3 +1,7 @@
+import { render } from 'react-dom'
+import React from 'react'
+import Todo from './components/Todo'
+
 const serviceWorker = require('serviceworker!./app/index.js')
 
 serviceWorker({
@@ -11,6 +15,10 @@ serviceWorker({
   const worker = registration.active
 
   worker.postMessage('hello from the other side')
+  render(
+    <Todo messages={[{value: 'lala'}]} />,
+    document.getElementById('entanglement-scatter')
+  )
 }).catch(() => {
   // Something went wrong during registration. The service-worker.js file
   // might be unavailable or contain a syntax error.
